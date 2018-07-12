@@ -39,8 +39,10 @@ RUN set -x; \
 RUN pip3 install num2words xlwt
 COPY ./entrypoint.sh /
 COPY ./odoo.conf /etc/odoo/
+COPY ./uid_entrypoint /
 RUN chown odoo /etc/odoo/odoo.conf
 RUN chmod +x /entrypoint.sh
+RUN chmod +x /uid_entrypoint
 
 # Mount /var/lib/odoo to allow restoring filestore and /mnt/extra-addons for users addons
 RUN mkdir -p /mnt/extra-addons \
