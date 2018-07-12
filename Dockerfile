@@ -50,7 +50,7 @@ RUN mkdir -p /mnt/extra-addons \
 VOLUME ["/var/lib/odoo", "/mnt/extra-addons"]
 
 RUN chmod g=u /etc/passwd
-ENTRYPOINT [ "uid_entrypoint" ]
+ENTRYPOINT [ "/uid_entrypoint" ]
 
 # Expose Odoo services
 EXPOSE 8069 8071
